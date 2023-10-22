@@ -6,7 +6,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Scanner;
 
-public class ContaBancaria extends Titular {
+public class ContaBancaria {
     Scanner scanner = new Scanner(System.in);
 
     private Titular titular;
@@ -18,7 +18,6 @@ public class ContaBancaria extends Titular {
     private Integer totalAlteracaoSenha = 1;
 
     public ContaBancaria(Titular titular) {
-        super(titular.getNome(), titular.getCpf(), titular.getEndereco());
         this.titular = titular;
         this.numeroConta = setNumeroConta();
         generateRandomPassword();
@@ -35,6 +34,18 @@ public class ContaBancaria extends Titular {
 
     public Titular getTitular() {
         return this.titular;
+    }
+
+    public String getNome() {
+        return this.titular.getNome();
+    }
+
+    public String getCpf() {
+        return this.titular.getCpf();
+    }
+
+    public String getEndereco() {
+        return this.titular.getEndereco();
     }
 
     public void setTitular(Titular titular) {
